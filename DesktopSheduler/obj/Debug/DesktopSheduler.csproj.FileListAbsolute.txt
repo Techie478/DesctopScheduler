@@ -1,0 +1,10 @@
+C:\Users\u10237\Desktop\IITU_MSNet\DesktopSheduler\DesktopSheduler\bin\Debug\DesktopSheduler.exe.config
+C:\Users\u10237\Desktop\IITU_MSNet\DesktopSheduler\DesktopSheduler\bin\Debug\DesktopSheduler.exe
+C:\Users\u10237\Desktop\IITU_MSNet\DesktopSheduler\DesktopSheduler\bin\Debug\DesktopSheduler.pdb
+C:\Users\u10237\Desktop\IITU_MSNet\DesktopSheduler\DesktopSheduler\obj\Debug\DesktopSheduler.csprojResolveAssemblyReference.cache
+C:\Users\u10237\Desktop\IITU_MSNet\DesktopSheduler\DesktopSheduler\obj\Debug\DesktopSheduler.Form1.resources
+C:\Users\u10237\Desktop\IITU_MSNet\DesktopSheduler\DesktopSheduler\obj\Debug\DesktopSheduler.Properties.Resources.resources
+C:\Users\u10237\Desktop\IITU_MSNet\DesktopSheduler\DesktopSheduler\obj\Debug\DesktopSheduler.csproj.GenerateResource.Cache
+C:\Users\u10237\Desktop\IITU_MSNet\DesktopSheduler\DesktopSheduler\obj\Debug\DesktopSheduler.csproj.CoreCompileInputs.cache
+C:\Users\u10237\Desktop\IITU_MSNet\DesktopSheduler\DesktopSheduler\obj\Debug\DesktopSheduler.exe
+C:\Users\u10237\Desktop\IITU_MSNet\DesktopSheduler\DesktopSheduler\obj\Debug\DesktopSheduler.pdb
