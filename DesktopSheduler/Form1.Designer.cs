@@ -56,11 +56,13 @@ namespace DesktopSheduler
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.datesTable = new System.Windows.Forms.TableLayoutPanel();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.toDoPanel.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.datesTable.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -331,6 +333,7 @@ namespace DesktopSheduler
             // 
             this.datesTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(85)))));
             this.datesTable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.datesTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
             this.datesTable.ColumnCount = 7;
             this.datesTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.datesTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
@@ -339,9 +342,10 @@ namespace DesktopSheduler
             this.datesTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.datesTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.datesTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.datesTable.Location = new System.Drawing.Point(54, 113);
+            this.datesTable.Controls.Add(this.button4, 0, 0);
+            this.datesTable.Location = new System.Drawing.Point(46, 113);
             this.datesTable.Name = "datesTable";
-            this.datesTable.RowCount = 7;
+            this.datesTable.RowCount = 5;
             this.datesTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.datesTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.datesTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
@@ -349,9 +353,20 @@ namespace DesktopSheduler
             this.datesTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.datesTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.datesTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.datesTable.Size = new System.Drawing.Size(580, 502);
+            this.datesTable.Size = new System.Drawing.Size(601, 502);
             this.datesTable.TabIndex = 5;
             this.datesTable.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.RosyBrown;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(5, 5);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(77, 92);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -375,6 +390,7 @@ namespace DesktopSheduler
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.datesTable.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -383,16 +399,28 @@ namespace DesktopSheduler
 
         private void SetCalendarDates() {
             Calendar calendar = CultureInfo.InvariantCulture.Calendar;
+            DateTime date = new DateTime(DateTime.Today.Year,DateTime.Today.Month,1);
+            int dayOfWeek = ((int)date.DayOfWeek + 6) % 7;
+            int dayOfMonth = 1;
            
-            for (int i = 0; i < 7; i++)
+                for (int j = 0; j < 5;)
+                {
+                    Label text = new Label();
+                    text.Text = dayOfMonth.ToString();
+                    datesTable.Controls.Add(text,dayOfWeek++,j);
+
+                    if (dayOfWeek >= 8)
                     {
-                        for (int j = 0; j < 8; j++)
-                        {
-                            Label text = new Label();
-                            text.Text = calendar.GetDayOfMonth(DateTime.Today).ToString();
-                            datesTable.Controls.Add(text,j,i);
-                        }
+                        dayOfWeek = 0;
+                        j++;
                     }
+                     dayOfMonth++;
+
+                    if (dayOfMonth > calendar.GetDaysInMonth(date.Year, date.Month))
+                        break;
+                  
+                }
+            
          }
 
 
@@ -424,7 +452,7 @@ namespace DesktopSheduler
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-       
+        private Button button4;
     }
 }
 
