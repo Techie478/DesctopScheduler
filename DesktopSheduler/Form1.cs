@@ -16,7 +16,8 @@ namespace DesktopSheduler
         public Form1()
         {
             InitializeComponent();
-            setCalendarDates();
+            SetCurrentDate(this.currentDay, this.currentWeekDay, this.currentMnthYear, DateTime.Today);
+            SetCalendarDates();
         }
 
         private void label1_Click(object sender, EventArgs e)
