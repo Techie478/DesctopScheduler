@@ -59,15 +59,5 @@ namespace DesktopSheduler.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap TexturesCom_Moss0265_8_alphamasked_S {
-            get {
-                object obj = ResourceManager.GetObject("TexturesCom_Moss0265_8_alphamasked_S", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

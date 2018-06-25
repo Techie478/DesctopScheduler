@@ -16,12 +16,7 @@ namespace DesktopSheduler
         public Form1()
         {
             InitializeComponent();
-
-            Label newLabel = new Label();
-            newLabel.Name = "mynewLabel";
-            newLabel.Text = "Hello";
-
-            this.monPanel.Controls.Add(newLabel, 0,0);
+            setCalendarDates();
         }
 
         private void label1_Click(object sender, EventArgs e)
