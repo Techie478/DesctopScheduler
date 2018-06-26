@@ -17,6 +17,10 @@ namespace DesktopSheduler
         {
             InitializeComponent();
             SetCurrentDate(this.currentDay, this.currentWeekDay, this.currentMnthYear, DateTime.Today);
+            JSONLoader jSONLoader = new JSONLoader();
+            jSONLoader.Write(new EventItem(DateTime.Now, new List<EventTask>()));
+
+            jSONLoader.Read();
             SetCalendarDates();
         }
 
