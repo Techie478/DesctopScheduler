@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
@@ -36,9 +37,9 @@ namespace DesktopSheduler
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.editTaskBtn = new System.Windows.Forms.Button();
+            this.deleteTaskBtn = new System.Windows.Forms.Button();
+            this.createTaskBtn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.toDoPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -56,13 +57,11 @@ namespace DesktopSheduler
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.datesTable = new System.Windows.Forms.TableLayoutPanel();
-            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.toDoPanel.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.datesTable.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -80,60 +79,60 @@ namespace DesktopSheduler
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(85)))));
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.button3);
-            this.panel4.Controls.Add(this.button2);
-            this.panel4.Controls.Add(this.button1);
+            this.panel4.Controls.Add(this.editTaskBtn);
+            this.panel4.Controls.Add(this.deleteTaskBtn);
+            this.panel4.Controls.Add(this.createTaskBtn);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Location = new System.Drawing.Point(3, 395);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(194, 215);
             this.panel4.TabIndex = 5;
             // 
-            // button3
+            // editTaskBtn
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(233)))), ((int)(((byte)(230)))));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(18, 138);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(156, 29);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Edit ";
-            this.button3.UseVisualStyleBackColor = false;
+            this.editTaskBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(78)))), ((int)(((byte)(115)))));
+            this.editTaskBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.editTaskBtn.FlatAppearance.BorderSize = 0;
+            this.editTaskBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editTaskBtn.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editTaskBtn.ForeColor = System.Drawing.Color.White;
+            this.editTaskBtn.Location = new System.Drawing.Point(18, 138);
+            this.editTaskBtn.Name = "editTaskBtn";
+            this.editTaskBtn.Size = new System.Drawing.Size(156, 29);
+            this.editTaskBtn.TabIndex = 6;
+            this.editTaskBtn.Text = "Edit ";
+            this.editTaskBtn.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // deleteTaskBtn
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(233)))), ((int)(((byte)(230)))));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(18, 92);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(156, 29);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Delete this task";
-            this.button2.UseVisualStyleBackColor = false;
+            this.deleteTaskBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.deleteTaskBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.deleteTaskBtn.FlatAppearance.BorderSize = 0;
+            this.deleteTaskBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteTaskBtn.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteTaskBtn.ForeColor = System.Drawing.Color.White;
+            this.deleteTaskBtn.Location = new System.Drawing.Point(18, 92);
+            this.deleteTaskBtn.Name = "deleteTaskBtn";
+            this.deleteTaskBtn.Size = new System.Drawing.Size(156, 29);
+            this.deleteTaskBtn.TabIndex = 5;
+            this.deleteTaskBtn.Text = "Delete this task";
+            this.deleteTaskBtn.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // createTaskBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(233)))), ((int)(((byte)(230)))));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(18, 44);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(156, 29);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Create new";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.createTaskBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(131)))), ((int)(((byte)(68)))));
+            this.createTaskBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.createTaskBtn.FlatAppearance.BorderSize = 0;
+            this.createTaskBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createTaskBtn.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createTaskBtn.ForeColor = System.Drawing.Color.White;
+            this.createTaskBtn.Location = new System.Drawing.Point(18, 44);
+            this.createTaskBtn.Name = "createTaskBtn";
+            this.createTaskBtn.Size = new System.Drawing.Size(156, 29);
+            this.createTaskBtn.TabIndex = 4;
+            this.createTaskBtn.Text = "Create new";
+            this.createTaskBtn.UseVisualStyleBackColor = false;
+            this.createTaskBtn.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
@@ -146,7 +145,7 @@ namespace DesktopSheduler
             this.label4.Size = new System.Drawing.Size(71, 18);
             this.label4.TabIndex = 3;
             this.label4.Text = "Actions";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+       
             // 
             // toDoPanel
             // 
@@ -207,7 +206,7 @@ namespace DesktopSheduler
             this.currentWeekDay.Size = new System.Drawing.Size(126, 18);
             this.currentWeekDay.TabIndex = 2;
             this.currentWeekDay.Text = "понедельник";
-            this.currentWeekDay.Click += new System.EventHandler(this.label2_Click);
+          
             // 
             // currentMnthYear
             // 
@@ -219,7 +218,7 @@ namespace DesktopSheduler
             this.currentMnthYear.Size = new System.Drawing.Size(19, 18);
             this.currentMnthYear.TabIndex = 1;
             this.currentMnthYear.Text = "6";
-            this.currentMnthYear.Click += new System.EventHandler(this.label1_Click);
+        
             // 
             // currentDay
             // 
@@ -248,6 +247,7 @@ namespace DesktopSheduler
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(703, 638);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label11
             // 
@@ -281,7 +281,7 @@ namespace DesktopSheduler
             this.label9.Size = new System.Drawing.Size(32, 16);
             this.label9.TabIndex = 3;
             this.label9.Text = "Fri.";
-            this.label9.Click += new System.EventHandler(this.label5_Click);
+          
             // 
             // label8
             // 
@@ -304,7 +304,7 @@ namespace DesktopSheduler
             this.label7.Size = new System.Drawing.Size(45, 16);
             this.label7.TabIndex = 3;
             this.label7.Text = "Wed.";
-            this.label7.Click += new System.EventHandler(this.label5_Click);
+      
             // 
             // label6
             // 
@@ -327,7 +327,7 @@ namespace DesktopSheduler
             this.label5.Size = new System.Drawing.Size(43, 16);
             this.label5.TabIndex = 3;
             this.label5.Text = "Mon.";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+     
             // 
             // datesTable
             // 
@@ -342,7 +342,6 @@ namespace DesktopSheduler
             this.datesTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.datesTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.datesTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.datesTable.Controls.Add(this.button4, 0, 0);
             this.datesTable.Location = new System.Drawing.Point(46, 113);
             this.datesTable.Name = "datesTable";
             this.datesTable.RowCount = 5;
@@ -356,17 +355,6 @@ namespace DesktopSheduler
             this.datesTable.Size = new System.Drawing.Size(601, 502);
             this.datesTable.TabIndex = 5;
             this.datesTable.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.RosyBrown;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(5, 5);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(77, 92);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -390,35 +378,69 @@ namespace DesktopSheduler
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.datesTable.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
-         #endregion
+        #endregion
 
 
-        private void SetCalendarDates() {
-            Calendar calendar = CultureInfo.InvariantCulture.Calendar;
-            DateTime date = new DateTime(DateTime.Today.Year,DateTime.Today.Month,1);
-            int dayOfWeek = ((int)date.DayOfWeek + 6) % 7;
-            int dayOfMonth = 1;
+        private Button createButton(DateTime date, int taskCount,bool isActive) {
+            Button button = new Button();
+
+            if (isActive)
+            {
+                button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(176)))), ((int)(((byte)(210)))));
+                button.Text = date.ToString("dd.MM.yyyy") + "\r\n\r\n" + taskCount + " Tasks\r\n";
+            }
+            else
+            {
+                button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(92)))), ((int)(((byte)(117)))));
+                button.Enabled = false;
+                button.Text = date.ToString("dd.MM.yyyy");
+            }
+            button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            button.FlatAppearance.BorderSize = 0;
+            button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button.ForeColor = System.Drawing.Color.Black;
+            button.Location = new System.Drawing.Point(5, 5);
+            button.Name = date.ToString()+"_btn";
+            button.Size = new System.Drawing.Size(77, 92);
+            button.TabIndex = 6;
            
-                for (int j = 0; j < 5;)
+            button.UseVisualStyleBackColor = false;
+
+            return button;
+        }
+
+        
+
+        private void SetCalendarDates(DateTime currentMonth) {
+            Calendar calendar     = CultureInfo.InvariantCulture.Calendar;
+            JSONLoader jSONLoader = new JSONLoader();
+
+            List<Button> buttonList   = new List<Button>();
+            List<EventItem> eventList = jSONLoader.Read();
+       
+            DateTime date = new DateTime(currentMonth.Year,currentMonth.Month,1);        
+            int dayOfWeek = ((int)date.DayOfWeek + 6) % 7;
+  
+
+            Button btn = null;
+              for (int j = 0; j < 5;)
                 {
-                    Label text = new Label();
-                    text.Text = dayOfMonth.ToString();
-                    datesTable.Controls.Add(text,dayOfWeek++,j);
+              
+                    btn = createButton(date, 5, eventList.Exists(x => (x.date.Equals(date))));       
+                    datesTable.Controls.Add(btn, dayOfWeek++,j);
 
                     if (dayOfWeek >= 8)
                     {
                         dayOfWeek = 0;
                         j++;
                     }
-                     dayOfMonth++;
+                    date = date.AddDays(1);
 
-                    if (dayOfMonth > calendar.GetDaysInMonth(date.Year, date.Month))
-                        break;
-                  
+                    if (date.Month != currentMonth.Month)
+                        break;                 
                 }
             
          }
@@ -441,9 +463,9 @@ namespace DesktopSheduler
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button createTaskBtn;
+        private System.Windows.Forms.Button editTaskBtn;
+        private System.Windows.Forms.Button deleteTaskBtn;
         private System.Windows.Forms.TableLayoutPanel datesTable;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -452,7 +474,6 @@ namespace DesktopSheduler
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private Button button4;
     }
 }
 

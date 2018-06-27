@@ -9,10 +9,10 @@ namespace DesktopSheduler
     class EventItem
     {
         [DataMember]
-        DateTime date { get; set; }
+        public DateTime date { get; set; }
 
         [DataMember]
-        List<EventTask> taskList { get; set; }
+        public List<EventTask> taskList { get; set; }
 
         public EventItem(DateTime date, List<EventTask> taskList)
         {

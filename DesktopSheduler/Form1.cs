@@ -17,27 +17,10 @@ namespace DesktopSheduler
         {
             InitializeComponent();
             SetCurrentDate(this.currentDay, this.currentWeekDay, this.currentMnthYear, DateTime.Today);
-            JSONLoader jSONLoader = new JSONLoader();
-            jSONLoader.Write(new EventItem(DateTime.Now, new List<EventTask>()));
-
-            jSONLoader.Read();
-            SetCalendarDates();
+            SetCalendarDates(DateTime.Today);
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
+     
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -60,6 +43,11 @@ namespace DesktopSheduler
         }
 
         private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

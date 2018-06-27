@@ -11,16 +11,16 @@ namespace DesktopSheduler
     class EventTask
     {
         [DataMember]
-        string taskDescription { get; set; }
+        public string taskDescription { get; set; }
 
         [DataMember]
-        bool isDone { get; set; }
+        public bool isDone { get; set; }
 
         [DataMember]
-        DateTime alarmTime { get; set; }
+        public DateTime alarmTime { get; set; }
 
         [DataMember]
-        bool isAlarmOn { get; set; }
+        public bool isAlarmOn { get; set; }
 
         public EventTask(string taskDescription, bool isDone, DateTime alarmTime, bool isAlarmOn)
         {
