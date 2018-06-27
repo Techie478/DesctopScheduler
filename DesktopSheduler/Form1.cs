@@ -17,7 +17,8 @@ namespace DesktopSheduler
         {
             InitializeComponent();
             SetCurrentDate(this.currentDay, this.currentWeekDay, this.currentMnthYear, DateTime.Today);
-            SetCalendarDates(DateTime.Today);
+
+            this.datesButtonList = SetCalendarDates(DateTime.Today);
         }
 
      

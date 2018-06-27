@@ -14,7 +14,7 @@ namespace DesktopSheduler
         public string taskDescription { get; set; }
 
         [DataMember]
-        public bool isDone { get; set; }
+        public bool isDone { get; set; }    
 
         [DataMember]
         public DateTime alarmTime { get; set; }

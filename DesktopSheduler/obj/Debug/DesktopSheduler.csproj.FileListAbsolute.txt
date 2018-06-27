@@ -29,3 +29,4 @@ C:\Users\u10237\Desktop\IITU_MSNet\DesktopSheduler\.netrepo\DesktopSheduler\bin\
 C:\Users\u10237\Desktop\IITU_MSNet\DesktopSheduler\.netrepo\DesktopSheduler\bin\Debug\DesktopSheduler.exe
 C:\Users\u10237\Desktop\IITU_MSNet\DesktopSheduler\.netrepo\DesktopSheduler\bin\Debug\DesktopSheduler.pdb
 C:\Users\u10237\Desktop\IITU_MSNet\DesktopSheduler\.netrepo\DesktopSheduler\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ersul\Desktop\Bitbucket\.netrepo\DesktopSheduler\obj\Debug\DesktopSheduler.csproj.CopyComplete
