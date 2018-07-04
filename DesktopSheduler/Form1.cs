@@ -21,9 +21,21 @@ namespace DesktopSheduler
             this.datesButtonList = SetCalendarDates(DateTime.Today);
         }
 
-     
+    
 
-        private void button1_Click(object sender, EventArgs e)
+        private void CreateNewTask(object sender, EventArgs e)
+        {
+            TaskInputBox inputBox = new TaskInputBox();
+            inputBox.ShowDialog();
+            
+        }
+
+        private void DeleteTask(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditTask(object sender, EventArgs e)
         {
 
         }

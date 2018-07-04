@@ -105,6 +105,7 @@ namespace DesktopSheduler
             this.editTaskBtn.TabIndex = 6;
             this.editTaskBtn.Text = "Edit ";
             this.editTaskBtn.UseVisualStyleBackColor = false;
+            this.editTaskBtn.Click += new System.EventHandler(this.EditTask);
             // 
             // deleteTaskBtn
             // 
@@ -121,6 +122,7 @@ namespace DesktopSheduler
             this.deleteTaskBtn.TabIndex = 5;
             this.deleteTaskBtn.Text = "Delete this task";
             this.deleteTaskBtn.UseVisualStyleBackColor = false;
+            this.deleteTaskBtn.Click += new System.EventHandler(this.DeleteTask);
             // 
             // createTaskBtn
             // 
@@ -137,7 +139,7 @@ namespace DesktopSheduler
             this.createTaskBtn.TabIndex = 4;
             this.createTaskBtn.Text = "Create new";
             this.createTaskBtn.UseVisualStyleBackColor = false;
-            this.createTaskBtn.Click += new System.EventHandler(this.button1_Click);
+            this.createTaskBtn.Click += new System.EventHandler(this.CreateNewTask);
             // 
             // label4
             // 
@@ -385,6 +387,7 @@ namespace DesktopSheduler
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
+            this.Opacity = 0.95D;
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -498,6 +501,8 @@ namespace DesktopSheduler
             currentMnthYear.Text = dateTime.ToString("MMMM") + " " + dateTime.Year;
             currentWeekDay.Text  = dateTime.ToString("dddd");
         }
+
+
         private Dictionary<Button,EventItem> datesButtonList;
         private Button prevButton;
         private System.Windows.Forms.Panel panel1;

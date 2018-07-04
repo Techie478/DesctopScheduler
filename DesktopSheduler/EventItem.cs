@@ -22,6 +22,7 @@ namespace DesktopSheduler
 
         public EventItem()
         {
+        
         }
 
         public void addTask(EventTask task) {
