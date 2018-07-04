@@ -71,9 +71,8 @@ namespace DesktopSheduler
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(267, 785);
+            this.panel1.Size = new System.Drawing.Size(200, 638);
             this.panel1.TabIndex = 0;
             // 
             // panel4
@@ -84,10 +83,9 @@ namespace DesktopSheduler
             this.panel4.Controls.Add(this.deleteTaskBtn);
             this.panel4.Controls.Add(this.createTaskBtn);
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Location = new System.Drawing.Point(4, 486);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Location = new System.Drawing.Point(3, 395);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(258, 264);
+            this.panel4.Size = new System.Drawing.Size(194, 215);
             this.panel4.TabIndex = 5;
             // 
             // editTaskBtn
@@ -98,10 +96,9 @@ namespace DesktopSheduler
             this.editTaskBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editTaskBtn.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editTaskBtn.ForeColor = System.Drawing.Color.White;
-            this.editTaskBtn.Location = new System.Drawing.Point(24, 170);
-            this.editTaskBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.editTaskBtn.Location = new System.Drawing.Point(18, 138);
             this.editTaskBtn.Name = "editTaskBtn";
-            this.editTaskBtn.Size = new System.Drawing.Size(208, 36);
+            this.editTaskBtn.Size = new System.Drawing.Size(156, 30);
             this.editTaskBtn.TabIndex = 6;
             this.editTaskBtn.Text = "Edit ";
             this.editTaskBtn.UseVisualStyleBackColor = false;
@@ -115,10 +112,9 @@ namespace DesktopSheduler
             this.deleteTaskBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteTaskBtn.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteTaskBtn.ForeColor = System.Drawing.Color.White;
-            this.deleteTaskBtn.Location = new System.Drawing.Point(24, 113);
-            this.deleteTaskBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.deleteTaskBtn.Location = new System.Drawing.Point(18, 92);
             this.deleteTaskBtn.Name = "deleteTaskBtn";
-            this.deleteTaskBtn.Size = new System.Drawing.Size(208, 36);
+            this.deleteTaskBtn.Size = new System.Drawing.Size(160, 30);
             this.deleteTaskBtn.TabIndex = 5;
             this.deleteTaskBtn.Text = "Delete this task";
             this.deleteTaskBtn.UseVisualStyleBackColor = false;
@@ -132,10 +128,9 @@ namespace DesktopSheduler
             this.createTaskBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createTaskBtn.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createTaskBtn.ForeColor = System.Drawing.Color.White;
-            this.createTaskBtn.Location = new System.Drawing.Point(24, 54);
-            this.createTaskBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.createTaskBtn.Location = new System.Drawing.Point(18, 44);
             this.createTaskBtn.Name = "createTaskBtn";
-            this.createTaskBtn.Size = new System.Drawing.Size(208, 36);
+            this.createTaskBtn.Size = new System.Drawing.Size(160, 30);
             this.createTaskBtn.TabIndex = 4;
             this.createTaskBtn.Text = "Create new";
             this.createTaskBtn.UseVisualStyleBackColor = false;
@@ -147,10 +142,9 @@ namespace DesktopSheduler
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(27, 16);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(20, 13);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 25);
+            this.label4.Size = new System.Drawing.Size(71, 18);
             this.label4.TabIndex = 3;
             this.label4.Text = "Actions";
             // 
@@ -160,10 +154,9 @@ namespace DesktopSheduler
             this.toDoPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.toDoPanel.Controls.Add(this.tableLayoutPanel1);
             this.toDoPanel.Controls.Add(this.label3);
-            this.toDoPanel.Location = new System.Drawing.Point(4, 214);
-            this.toDoPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.toDoPanel.Location = new System.Drawing.Point(3, 174);
             this.toDoPanel.Name = "toDoPanel";
-            this.toDoPanel.Size = new System.Drawing.Size(258, 264);
+            this.toDoPanel.Size = new System.Drawing.Size(194, 215);
             this.toDoPanel.TabIndex = 0;
             this.toDoPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.toDoPanel_Paint);
             // 
@@ -173,13 +166,12 @@ namespace DesktopSheduler
             this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.42424F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(11, 62);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(8, 50);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(241, 197);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(181, 160);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // label3
@@ -188,10 +180,9 @@ namespace DesktopSheduler
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(27, 16);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(20, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 25);
+            this.label3.Size = new System.Drawing.Size(60, 18);
             this.label3.TabIndex = 3;
             this.label3.Text = "To Do";
             // 
@@ -202,9 +193,8 @@ namespace DesktopSheduler
             this.panel3.Controls.Add(this.currentDay);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(267, 207);
+            this.panel3.Size = new System.Drawing.Size(200, 168);
             this.panel3.TabIndex = 0;
             // 
             // currentWeekDay
@@ -212,10 +202,9 @@ namespace DesktopSheduler
             this.currentWeekDay.AutoSize = true;
             this.currentWeekDay.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.currentWeekDay.ForeColor = System.Drawing.Color.White;
-            this.currentWeekDay.Location = new System.Drawing.Point(55, 155);
-            this.currentWeekDay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.currentWeekDay.Location = new System.Drawing.Point(41, 126);
             this.currentWeekDay.Name = "currentWeekDay";
-            this.currentWeekDay.Size = new System.Drawing.Size(162, 25);
+            this.currentWeekDay.Size = new System.Drawing.Size(126, 18);
             this.currentWeekDay.TabIndex = 2;
             this.currentWeekDay.Text = "понедельник";
             // 
@@ -224,10 +213,9 @@ namespace DesktopSheduler
             this.currentMnthYear.AutoSize = true;
             this.currentMnthYear.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.currentMnthYear.ForeColor = System.Drawing.Color.White;
-            this.currentMnthYear.Location = new System.Drawing.Point(52, 133);
-            this.currentMnthYear.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.currentMnthYear.Location = new System.Drawing.Point(39, 108);
             this.currentMnthYear.Name = "currentMnthYear";
-            this.currentMnthYear.Size = new System.Drawing.Size(26, 25);
+            this.currentMnthYear.Size = new System.Drawing.Size(19, 18);
             this.currentMnthYear.TabIndex = 1;
             this.currentMnthYear.Text = "6";
             // 
@@ -236,10 +224,9 @@ namespace DesktopSheduler
             this.currentDay.AutoSize = true;
             this.currentDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.currentDay.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.currentDay.Location = new System.Drawing.Point(33, 0);
-            this.currentDay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.currentDay.Location = new System.Drawing.Point(25, 0);
             this.currentDay.Name = "currentDay";
-            this.currentDay.Size = new System.Drawing.Size(183, 130);
+            this.currentDay.Size = new System.Drawing.Size(151, 108);
             this.currentDay.TabIndex = 0;
             this.currentDay.Text = "25";
             // 
@@ -255,10 +242,9 @@ namespace DesktopSheduler
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.datesTable);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(275, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(206, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(937, 785);
+            this.panel2.Size = new System.Drawing.Size(703, 638);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -267,10 +253,9 @@ namespace DesktopSheduler
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(773, 113);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(580, 92);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(47, 18);
+            this.label11.Size = new System.Drawing.Size(40, 16);
             this.label11.TabIndex = 3;
             this.label11.Text = "Sun.";
             // 
@@ -279,10 +264,9 @@ namespace DesktopSheduler
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(663, 113);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(497, 92);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(43, 18);
+            this.label10.Size = new System.Drawing.Size(37, 16);
             this.label10.TabIndex = 3;
             this.label10.Text = "Sat.";
             // 
@@ -291,10 +275,9 @@ namespace DesktopSheduler
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(552, 113);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(414, 92);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(36, 18);
+            this.label9.Size = new System.Drawing.Size(32, 16);
             this.label9.TabIndex = 3;
             this.label9.Text = "Fri.";
             // 
@@ -303,10 +286,9 @@ namespace DesktopSheduler
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(437, 113);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(328, 92);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 18);
+            this.label8.Size = new System.Drawing.Size(39, 16);
             this.label8.TabIndex = 3;
             this.label8.Text = "Thu.";
             // 
@@ -315,10 +297,9 @@ namespace DesktopSheduler
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(319, 113);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(239, 92);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 18);
+            this.label7.Size = new System.Drawing.Size(45, 16);
             this.label7.TabIndex = 3;
             this.label7.Text = "Wed.";
             // 
@@ -327,10 +308,9 @@ namespace DesktopSheduler
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(211, 113);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(158, 92);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 18);
+            this.label6.Size = new System.Drawing.Size(39, 16);
             this.label6.TabIndex = 3;
             this.label6.Text = "Tue.";
             // 
@@ -339,10 +319,9 @@ namespace DesktopSheduler
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(100, 113);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(75, 92);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 18);
+            this.label5.Size = new System.Drawing.Size(43, 16);
             this.label5.TabIndex = 3;
             this.label5.Text = "Mon.";
             // 
@@ -359,8 +338,7 @@ namespace DesktopSheduler
             this.datesTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.datesTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.datesTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.datesTable.Location = new System.Drawing.Point(61, 139);
-            this.datesTable.Margin = new System.Windows.Forms.Padding(4);
+            this.datesTable.Location = new System.Drawing.Point(46, 113);
             this.datesTable.Name = "datesTable";
             this.datesTable.RowCount = 5;
             this.datesTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
@@ -370,22 +348,21 @@ namespace DesktopSheduler
             this.datesTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.datesTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.datesTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.datesTable.Size = new System.Drawing.Size(801, 618);
+            this.datesTable.Size = new System.Drawing.Size(601, 502);
             this.datesTable.TabIndex = 5;
             this.datesTable.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1212, 785);
+            this.ClientSize = new System.Drawing.Size(909, 638);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Opacity = 0.95D;
             this.Text = "Form1";
@@ -403,22 +380,13 @@ namespace DesktopSheduler
         }
         #endregion
 
-
-        private Button createButton(DateTime date, int taskCount,bool isActive) {
-            Button button = new Button();
-
+        private void CustomizeButton(Button button, DateTime date, int taskCount, bool isActive)
+        {
             if (isActive)
             {
                 button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(176)))), ((int)(((byte)(210)))));
-                button.Text      = date.ToString("dd.MM.yyyy") + "\r\n\r\n" + taskCount + " Tasks\r\n";
-                button.Click     += (s, e) => {
-                    button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(96)))), ((int)(((byte)(55)))));
-
-                    if (this.prevButton != null)
-                        this.prevButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(176)))), ((int)(((byte)(210)))));
-
-                    this.prevButton = button;
-                };
+                button.Text = date.ToString("dd.MM.yyyy") + "\r\n\r\n" + taskCount + " Tasks\r\n";
+                button.Enabled = true;
             }
             else
             {
@@ -427,23 +395,42 @@ namespace DesktopSheduler
                 button.Text = date.ToString("dd.MM.yyyy");
             }
 
+          }
+
+        private Button createButton(DateTime date, int taskCount,bool isActive) {
+            Button button = new Button();
+            CustomizeButton(button, date, taskCount, isActive);
+
+            if (isActive)
+            {
+                button.Click += (s, e) =>
+                {
+                    button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(96)))), ((int)(((byte)(55)))));
+                    if (this.prevButton != null && this.prevButton != s as Button)
+                        this.prevButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(176)))), ((int)(((byte)(210)))));
+
+                    this.prevButton = button;
+                    SetCurrentDate(datesButtonList[button].date);
+                };                 
+            }
+
             button.Anchor = ((System.Windows.Forms.AnchorStyles)((((
-                         System.Windows.Forms.AnchorStyles.Top 
-                       | System.Windows.Forms.AnchorStyles.Bottom)
-                       | System.Windows.Forms.AnchorStyles.Left)
-                       | System.Windows.Forms.AnchorStyles.Right)
-                       )
-            );
+                       System.Windows.Forms.AnchorStyles.Top
+                     | System.Windows.Forms.AnchorStyles.Bottom)
+                     | System.Windows.Forms.AnchorStyles.Left)
+                     | System.Windows.Forms.AnchorStyles.Right)
+                     )
+             );
 
             button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             button.FlatAppearance.BorderSize = 0;
             button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button.ForeColor = System.Drawing.Color.White;
             button.Location = new System.Drawing.Point(0, 0);
-            button.Name = date.ToString()+"_btn";
-            button.AutoSize = true;
-            button.TabIndex = 6;
-           
+            button.Name = date.ToString() + "_btn";
+            button.AutoSize = false;
+
+
             button.UseVisualStyleBackColor = false;
 
             return button;
@@ -451,7 +438,7 @@ namespace DesktopSheduler
 
        
         private Dictionary<Button, EventItem> SetCalendarDates(DateTime currentMonth) {
-            List<Button> buttonList = new List<Button>();
+           
             Calendar     calendar   = CultureInfo.InvariantCulture.Calendar;
             JSONLoader   jSONLoader = new JSONLoader();
 
@@ -465,23 +452,20 @@ namespace DesktopSheduler
             Button btn = null;
               for (int j = 0; j < 5;)
                 {
-                EventItem eventItem = eventList.Find(x => 
-                     ( x.date.Month == date.Month &&
-                         x.date.Day == date.Day  && 
-                          date.Year == x.date.Year
-                     ));
+                EventItem eventItem = eventList.Find(x => CheckTwoDates(x.date,date));
 
                 if (eventItem != null)
                 {
                     btn = createButton(date, eventItem.taskList.Count, true);
-                    eventButtonMap.Add(btn, eventItem);
                 }
                 else
+                {
                     btn = createButton(date, 0, false);
-
-
-                datesTable.Controls.Add(btn, dayOfWeek++,j);
-
+                    eventItem = new EventItem(date,new List<EventTask>());
+                }
+                eventButtonMap.Add(btn, eventItem);
+                 datesTable.Controls.Add(btn, dayOfWeek++,j);
+              
                     if (dayOfWeek >= 8)
                     {
                         dayOfWeek = 0;
@@ -495,11 +479,39 @@ namespace DesktopSheduler
             return eventButtonMap;
          }
 
+        private void RefreshTable () {
+            datesTable.Controls.Clear();
+            this.datesButtonList = SetCalendarDates(DateTime.Now);
+        }
 
-        private void SetCurrentDate(Label currentDay, Label currentWeekDay, Label currentMnthYear, DateTime dateTime) {
-            currentDay.Text      = dateTime.Day.ToString();
-            currentMnthYear.Text = dateTime.ToString("MMMM") + " " + dateTime.Year;
-            currentWeekDay.Text  = dateTime.ToString("dddd");
+        private bool CheckTwoDates(DateTime dateTime1,DateTime dateTime2) {
+            return (dateTime1.Month == dateTime2.Month && dateTime1.Day == dateTime2.Day && dateTime1.Year == dateTime2.Year);
+        }
+
+        private void UpdateDay(EventTask newTask) {
+            EventItem evntItem = null; 
+          
+            foreach (Button btn in datesButtonList.Keys)
+            {
+                evntItem = datesButtonList[btn];
+             
+                if (CheckTwoDates(evntItem.date, newTask.alarmTime))
+                {
+                    evntItem.taskList.Add(newTask);
+                    CustomizeButton(btn, evntItem.date, evntItem.taskList.Count, true);
+                    break;
+                }                              
+            }
+            JSONLoader jSONLoader = new JSONLoader();
+            jSONLoader.Write(evntItem);
+          
+        }
+
+
+        private void SetCurrentDate(DateTime dateTime) {
+            this.currentDay.Text      = dateTime.Day.ToString();
+            this.currentMnthYear.Text = dateTime.ToString("MMMM") + " " + dateTime.Year;
+            this.currentWeekDay.Text  = dateTime.ToString("dddd");
         }
 
 

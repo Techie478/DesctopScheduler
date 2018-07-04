@@ -6,7 +6,7 @@ using System.Runtime.Serialization;
 namespace DesktopSheduler
 {
     [DataContract]
-    class EventItem
+    public class EventItem
     {
         [DataMember]
         public DateTime date { get; set; }

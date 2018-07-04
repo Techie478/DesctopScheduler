@@ -16,18 +16,21 @@ namespace DesktopSheduler
         public Form1()
         {
             InitializeComponent();
-            SetCurrentDate(this.currentDay, this.currentWeekDay, this.currentMnthYear, DateTime.Today);
-
+            SetCurrentDate(DateTime.Today);
+            
             this.datesButtonList = SetCalendarDates(DateTime.Today);
         }
 
-    
+        
 
         private void CreateNewTask(object sender, EventArgs e)
         {
             TaskInputBox inputBox = new TaskInputBox();
             inputBox.ShowDialog();
-            
+            EventTask task = inputBox.newTask;
+
+            if (task != null)
+                UpdateDay(task);
         }
 
         private void DeleteTask(object sender, EventArgs e)

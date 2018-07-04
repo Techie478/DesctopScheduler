@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace DesktopSheduler
 {
     [DataContract]
-    class EventTask
+    public class EventTask
     {
         [DataMember]
         public string taskDescription { get; set; }

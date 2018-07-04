@@ -12,6 +12,8 @@ namespace DesktopSheduler
 {
     public partial class TaskInputBox : Form
     {
+        public EventTask newTask { get; set; }
+
         public TaskInputBox()
         {
             InitializeComponent();
@@ -28,12 +30,11 @@ namespace DesktopSheduler
             this.Close();
         }
 
-        private void Submit_form() {
+        private void Submit_form(object sender, EventArgs e) {
             alarmTime.Value = new DateTime(date.Value.Year, date.Value.Month, date.Value.Day, 
                                             alarmTime.Value.Hour, alarmTime.Value.Minute, alarmTime.Value.Second);
 
             this.newTask = new EventTask(this.taskDesc.Text,false,alarmTime.Value, this.isAlaramOn.Checked);
-
             this.Close();
         }
 

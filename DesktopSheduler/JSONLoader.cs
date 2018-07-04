@@ -20,8 +20,18 @@ namespace DesktopSheduler
         public void Write(EventItem eventItem) {
           
             List<EventItem> arrayList = Read();
-    
-            arrayList.Add(eventItem);
+            var evnt = arrayList.Find(x => x.date.Date == eventItem.date.Date);
+            if (evnt != null)
+            {
+                arrayList.Remove(evnt);
+                arrayList.Add(eventItem);
+               // evnt = eventItem;
+            }
+            else
+            {
+                arrayList.Add(eventItem);
+            }
+     
             MemoryStream msObj = new MemoryStream();
             try
             {
