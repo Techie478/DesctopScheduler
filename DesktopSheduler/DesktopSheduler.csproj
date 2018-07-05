@@ -81,6 +81,8 @@
     <EmbeddedResource Include="TaskInputBox.resx">
       <DependentUpon>TaskInputBox.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\EventItem.datasource" />
+    <None Include="Properties\DataSources\EventTask.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
