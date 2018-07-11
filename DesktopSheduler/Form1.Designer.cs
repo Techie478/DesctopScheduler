@@ -36,6 +36,10 @@ namespace DesktopSheduler
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.editTaskBtn = new System.Windows.Forms.Button();
@@ -43,7 +47,7 @@ namespace DesktopSheduler
             this.createTaskBtn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.toDoPanel = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.toDoListGrid = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.currentWeekDay = new System.Windows.Forms.Label();
@@ -58,15 +62,15 @@ namespace DesktopSheduler
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.datesTable = new System.Windows.Forms.TableLayoutPanel();
-            this.eventTaskBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.eventItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.isDoneDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.taskDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alarmTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eventTaskBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.eventItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.toDoPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toDoListGrid)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eventTaskBindingSource)).BeginInit();
@@ -81,7 +85,7 @@ namespace DesktopSheduler
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 638);
+            this.panel1.Size = new System.Drawing.Size(248, 638);
             this.panel1.TabIndex = 0;
             // 
             // panel4
@@ -94,7 +98,7 @@ namespace DesktopSheduler
             this.panel4.Controls.Add(this.label4);
             this.panel4.Location = new System.Drawing.Point(3, 395);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(194, 215);
+            this.panel4.Size = new System.Drawing.Size(236, 215);
             this.panel4.TabIndex = 5;
             // 
             // editTaskBtn
@@ -107,7 +111,7 @@ namespace DesktopSheduler
             this.editTaskBtn.ForeColor = System.Drawing.Color.White;
             this.editTaskBtn.Location = new System.Drawing.Point(18, 138);
             this.editTaskBtn.Name = "editTaskBtn";
-            this.editTaskBtn.Size = new System.Drawing.Size(156, 30);
+            this.editTaskBtn.Size = new System.Drawing.Size(195, 30);
             this.editTaskBtn.TabIndex = 6;
             this.editTaskBtn.Text = "Edit ";
             this.editTaskBtn.UseVisualStyleBackColor = false;
@@ -123,7 +127,7 @@ namespace DesktopSheduler
             this.deleteTaskBtn.ForeColor = System.Drawing.Color.White;
             this.deleteTaskBtn.Location = new System.Drawing.Point(18, 92);
             this.deleteTaskBtn.Name = "deleteTaskBtn";
-            this.deleteTaskBtn.Size = new System.Drawing.Size(160, 30);
+            this.deleteTaskBtn.Size = new System.Drawing.Size(199, 30);
             this.deleteTaskBtn.TabIndex = 5;
             this.deleteTaskBtn.Text = "Delete this task";
             this.deleteTaskBtn.UseVisualStyleBackColor = false;
@@ -139,7 +143,7 @@ namespace DesktopSheduler
             this.createTaskBtn.ForeColor = System.Drawing.Color.White;
             this.createTaskBtn.Location = new System.Drawing.Point(18, 44);
             this.createTaskBtn.Name = "createTaskBtn";
-            this.createTaskBtn.Size = new System.Drawing.Size(160, 30);
+            this.createTaskBtn.Size = new System.Drawing.Size(199, 30);
             this.createTaskBtn.TabIndex = 4;
             this.createTaskBtn.Text = "Create new";
             this.createTaskBtn.UseVisualStyleBackColor = false;
@@ -159,42 +163,51 @@ namespace DesktopSheduler
             // 
             // toDoPanel
             // 
+            this.toDoPanel.AutoSize = true;
             this.toDoPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(85)))));
             this.toDoPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.toDoPanel.Controls.Add(this.dataGridView1);
+            this.toDoPanel.Controls.Add(this.toDoListGrid);
             this.toDoPanel.Controls.Add(this.label3);
             this.toDoPanel.Location = new System.Drawing.Point(3, 174);
             this.toDoPanel.Name = "toDoPanel";
-            this.toDoPanel.Size = new System.Drawing.Size(194, 215);
+            this.toDoPanel.Size = new System.Drawing.Size(236, 218);
             this.toDoPanel.TabIndex = 0;
             this.toDoPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.toDoPanel_Paint);
             // 
-            // dataGridView1
+            // toDoListGrid
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            this.dataGridView1.ColumnHeadersHeight = 25;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.toDoListGrid.AllowUserToAddRows = false;
+            this.toDoListGrid.AllowUserToDeleteRows = false;
+            this.toDoListGrid.AllowUserToOrderColumns = true;
+            this.toDoListGrid.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.toDoListGrid.AutoGenerateColumns = false;
+            this.toDoListGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.toDoListGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(85)))));
+            this.toDoListGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.toDoListGrid.CausesValidation = false;
+            this.toDoListGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.toDoListGrid.ColumnHeadersHeight = 25;
+            this.toDoListGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.isDoneDataGridViewCheckBoxColumn,
             this.taskDescriptionDataGridViewTextBoxColumn,
             this.alarmTimeDataGridViewTextBoxColumn});
-            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            this.dataGridView1.DataSource = this.eventTaskBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 34);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(192, 179);
-            this.dataGridView1.TabIndex = 4;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.toDoListGrid.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.toDoListGrid.DataSource = this.eventTaskBindingSource;
+            this.toDoListGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.toDoListGrid.Location = new System.Drawing.Point(0, 34);
+            this.toDoListGrid.Name = "toDoListGrid";
+            this.toDoListGrid.RowHeadersVisible = false;
+            this.toDoListGrid.RowHeadersWidth = 25;
+            this.toDoListGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.toDoListGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.toDoListGrid.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.toDoListGrid.RowTemplate.Height = 35;
+            this.toDoListGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.toDoListGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.toDoListGrid.Size = new System.Drawing.Size(235, 179);
+            this.toDoListGrid.TabIndex = 4;
+            this.toDoListGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label3
             // 
@@ -216,7 +229,7 @@ namespace DesktopSheduler
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 168);
+            this.panel3.Size = new System.Drawing.Size(248, 168);
             this.panel3.TabIndex = 0;
             // 
             // currentWeekDay
@@ -264,9 +277,9 @@ namespace DesktopSheduler
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.datesTable);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(206, 0);
+            this.panel2.Location = new System.Drawing.Point(245, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(703, 638);
+            this.panel2.Size = new System.Drawing.Size(664, 638);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -374,6 +387,45 @@ namespace DesktopSheduler
             this.datesTable.TabIndex = 5;
             this.datesTable.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
+            // isDoneDataGridViewCheckBoxColumn
+            // 
+            this.isDoneDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.isDoneDataGridViewCheckBoxColumn.DataPropertyName = "isDone";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle1.NullValue = false;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.isDoneDataGridViewCheckBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.isDoneDataGridViewCheckBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.isDoneDataGridViewCheckBoxColumn.Frozen = true;
+            this.isDoneDataGridViewCheckBoxColumn.HeaderText = "Done";
+            this.isDoneDataGridViewCheckBoxColumn.MinimumWidth = 50;
+            this.isDoneDataGridViewCheckBoxColumn.Name = "isDoneDataGridViewCheckBoxColumn";
+            this.isDoneDataGridViewCheckBoxColumn.Width = 50;
+            // 
+            // taskDescriptionDataGridViewTextBoxColumn
+            // 
+            this.taskDescriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.taskDescriptionDataGridViewTextBoxColumn.DataPropertyName = "taskDescription";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.taskDescriptionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.taskDescriptionDataGridViewTextBoxColumn.Frozen = true;
+            this.taskDescriptionDataGridViewTextBoxColumn.HeaderText = "taskDescription";
+            this.taskDescriptionDataGridViewTextBoxColumn.Name = "taskDescriptionDataGridViewTextBoxColumn";
+            this.taskDescriptionDataGridViewTextBoxColumn.Width = 105;
+            // 
+            // alarmTimeDataGridViewTextBoxColumn
+            // 
+            this.alarmTimeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.alarmTimeDataGridViewTextBoxColumn.DataPropertyName = "alarmTime";
+            dataGridViewCellStyle3.Format = "HH:mm";
+            this.alarmTimeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.alarmTimeDataGridViewTextBoxColumn.HeaderText = "alarmTime";
+            this.alarmTimeDataGridViewTextBoxColumn.Name = "alarmTimeDataGridViewTextBoxColumn";
+            this.alarmTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.alarmTimeDataGridViewTextBoxColumn.Width = 80;
+            // 
             // eventTaskBindingSource
             // 
             this.eventTaskBindingSource.DataSource = typeof(DesktopSheduler.EventTask);
@@ -381,27 +433,6 @@ namespace DesktopSheduler
             // eventItemBindingSource
             // 
             this.eventItemBindingSource.DataSource = typeof(DesktopSheduler.EventItem);
-            // 
-            // isDoneDataGridViewCheckBoxColumn
-            // 
-            this.isDoneDataGridViewCheckBoxColumn.DataPropertyName = "isDone";
-            this.isDoneDataGridViewCheckBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.isDoneDataGridViewCheckBoxColumn.HeaderText = "Done";
-            this.isDoneDataGridViewCheckBoxColumn.Name = "isDoneDataGridViewCheckBoxColumn";
-            this.isDoneDataGridViewCheckBoxColumn.Width = 35;
-            // 
-            // taskDescriptionDataGridViewTextBoxColumn
-            // 
-            this.taskDescriptionDataGridViewTextBoxColumn.DataPropertyName = "taskDescription";
-            this.taskDescriptionDataGridViewTextBoxColumn.HeaderText = "taskDescription";
-            this.taskDescriptionDataGridViewTextBoxColumn.Name = "taskDescriptionDataGridViewTextBoxColumn";
-            // 
-            // alarmTimeDataGridViewTextBoxColumn
-            // 
-            this.alarmTimeDataGridViewTextBoxColumn.DataPropertyName = "alarmTime";
-            this.alarmTimeDataGridViewTextBoxColumn.HeaderText = "alarmTime";
-            this.alarmTimeDataGridViewTextBoxColumn.Name = "alarmTimeDataGridViewTextBoxColumn";
-            this.alarmTimeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Form1
             // 
@@ -418,11 +449,12 @@ namespace DesktopSheduler
             this.Opacity = 0.95D;
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.toDoPanel.ResumeLayout(false);
             this.toDoPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toDoListGrid)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -436,7 +468,7 @@ namespace DesktopSheduler
 
         private void CustomizeButton(Button button, DateTime date, int taskCount, bool isActive)
         {
-            if (isActive)
+            if (isActive && taskCount > 0)
             {
                 button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(176)))), ((int)(((byte)(210)))));
                 button.Text = date.ToString("dd.MM.yyyy") + "\r\n\r\n" + taskCount + " Tasks\r\n";
@@ -460,10 +492,10 @@ namespace DesktopSheduler
                 button.Click += (s, e) =>
                 {
                     button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(96)))), ((int)(((byte)(55)))));
-                    if (this.prevButton != null && this.prevButton != s as Button)
-                        this.prevButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(176)))), ((int)(((byte)(210)))));
+                    if (this.currButton != null && this.currButton != s as Button)
+                        this.currButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(176)))), ((int)(((byte)(210)))));
 
-                    this.prevButton = button;
+                    this.currButton = button;
                     SetCurrentDate(datesButtonList[button].date);
                     ShowToDoList(datesButtonList[button]);
                 };                 
@@ -490,7 +522,7 @@ namespace DesktopSheduler
         }
 
         private void ShowToDoList(EventItem eventItem) {
-            dataGridView1.DataSource = eventItem.taskList;
+            toDoListGrid.DataSource = eventItem.taskList;
         }
 
         private Dictionary<Button, EventItem> SetCalendarDates(DateTime currentMonth) {
@@ -544,7 +576,7 @@ namespace DesktopSheduler
             return (dateTime1.Month == dateTime2.Month && dateTime1.Day == dateTime2.Day && dateTime1.Year == dateTime2.Year);
         }
 
-        private void UpdateDay(EventTask newTask) {
+        private void AddTaskToDay(EventTask newTask) {
             EventItem evntItem = null; 
           
             foreach (Button btn in datesButtonList.Keys)
@@ -563,6 +595,24 @@ namespace DesktopSheduler
           
         }
 
+        private void DeleteTaskOfDay(EventTask task) {
+            EventItem evntItem = null;
+
+            foreach (Button btn in datesButtonList.Keys)
+            {
+                evntItem = datesButtonList[btn];
+
+                if (CheckTwoDates(evntItem.date, task.alarmTime))
+                {
+                    evntItem.taskList.Remove(task);
+                    CustomizeButton(btn, evntItem.date, evntItem.taskList.Count, true);
+                    break;
+                }
+            }
+            JSONLoader jSONLoader = new JSONLoader();
+            jSONLoader.Write(evntItem);
+        }
+
 
         private void SetCurrentDate(DateTime dateTime) {
             this.currentDay.Text      = dateTime.Day.ToString();
@@ -572,7 +622,7 @@ namespace DesktopSheduler
 
 
         private Dictionary<Button,EventItem> datesButtonList;
-        private Button prevButton;
+        private Button currButton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
@@ -594,7 +644,7 @@ namespace DesktopSheduler
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private DataGridView dataGridView1;
+        private DataGridView toDoListGrid;
         private BindingSource eventTaskBindingSource;
         private BindingSource eventItemBindingSource;
         private DataGridViewCheckBoxColumn isDoneDataGridViewCheckBoxColumn;

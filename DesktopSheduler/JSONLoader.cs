@@ -35,33 +35,42 @@ namespace DesktopSheduler
             MemoryStream msObj = new MemoryStream();
             try
             {
+                File.WriteAllText(filePath,String.Empty);
                 jsonSerializer.WriteObject(msObj, arrayList);
-                FileStream fs = new FileStream(filePath, FileMode.OpenOrCreate);
+                FileStream fs = new FileStream(filePath, FileMode.OpenOrCreate);              
                 msObj.WriteTo(fs);
+             
                 fs.Flush();
                 fs.Close();
             }
             catch(Exception e) {
                 MessageBox.Show("Не удается найти указаный файл " + e.Message);
+               
             }   
         }
 
         public List<EventItem> Read() {
             List<EventItem> arrayList;
+            MemoryStream msObj = null;
+            StreamReader sr = null;
             try {
-                StreamReader sr = new StreamReader(filePath);
+                 sr = new StreamReader(filePath);
                 string json = sr.ReadToEnd();
 
-                MemoryStream msObj = new MemoryStream(Encoding.UTF8.GetBytes(json));
+                msObj = new MemoryStream(Encoding.UTF8.GetBytes(json));
                 arrayList = jsonSerializer.ReadObject(msObj) as List<EventItem>;
-                msObj.Close();
-                sr.Close();
-
+              
                 if (arrayList == null)
                     arrayList = new List<EventItem>();
             }
             catch(Exception e) {
                 arrayList = new List<EventItem>();
+            }
+
+            if (msObj != null && sr != null)
+            {
+                msObj.Close();
+                sr.Close();
             }
 
             return arrayList;

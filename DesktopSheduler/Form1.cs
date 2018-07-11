@@ -30,12 +30,22 @@ namespace DesktopSheduler
             EventTask task = inputBox.newTask;
 
             if (task != null)
-                UpdateDay(task);
+                AddTaskToDay(task);
         }
 
         private void DeleteTask(object sender, EventArgs e)
         {
+            DialogResult dr = MessageBox.Show("Do you realy want to delete this task?.", "Delete", MessageBoxButtons.YesNo,
+             MessageBoxIcon.Information);
 
+            if (dr == DialogResult.Yes)
+            {
+               foreach (DataGridViewRow row in this.toDoListGrid.SelectedRows)
+                 {
+                    DeleteTaskOfDay(row.DataBoundItem as EventTask);                  
+                 }
+            }
+          
         }
 
         private void EditTask(object sender, EventArgs e)
