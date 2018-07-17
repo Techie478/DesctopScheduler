@@ -16,6 +16,40 @@ namespace DesktopSheduler
         DataContractJsonSerializer jsonSerializer = new DataContractJsonSerializer(typeof(List<EventItem>));
         string filePath = "eventList.json";
 
+        public void Write(Array eventItems)
+        {
+            List<EventItem> arrayList = Read();
+            foreach (EventItem eventItem in eventItems)
+            {
+                var evnt = arrayList.Find(x => x.date.Date == eventItem.date.Date);
+                if (evnt != null)
+                {
+                    arrayList.Remove(evnt);
+                    arrayList.Add(eventItem);
+                    // evnt = eventItem;
+                }
+                else
+                {
+                    arrayList.Add(eventItem);
+                }
+            }
+            MemoryStream msObj = new MemoryStream();
+            try
+            {
+                File.WriteAllText(filePath, String.Empty);
+                jsonSerializer.WriteObject(msObj, arrayList);
+                FileStream fs = new FileStream(filePath, FileMode.OpenOrCreate);
+                msObj.WriteTo(fs);
+
+                fs.Flush();
+                fs.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Не удается найти указаный файл " + e.Message);
+
+            }
+        }
 
         public void Write(EventItem eventItem) {
           

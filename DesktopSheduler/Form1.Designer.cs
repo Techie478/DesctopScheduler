@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace DesktopSheduler
@@ -40,20 +41,28 @@ namespace DesktopSheduler
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.datesTable = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.editTaskBtn = new System.Windows.Forms.Button();
+            this.saveChangeBtn = new System.Windows.Forms.Button();
             this.deleteTaskBtn = new System.Windows.Forms.Button();
             this.createTaskBtn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.toDoPanel = new System.Windows.Forms.Panel();
             this.toDoListGrid = new System.Windows.Forms.DataGridView();
+            this.isDoneDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.taskDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alarmTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eventTaskBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.currentWeekDay = new System.Windows.Forms.Label();
             this.currentMnthYear = new System.Windows.Forms.Label();
             this.currentDay = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.crntMonthBtn = new System.Windows.Forms.Button();
+            this.prevMonthBtn = new System.Windows.Forms.Button();
+            this.nextMonthBtn = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -61,21 +70,45 @@ namespace DesktopSheduler
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.datesTable = new System.Windows.Forms.TableLayoutPanel();
-            this.isDoneDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.taskDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alarmTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eventTaskBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eventItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.toDoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toDoListGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventTaskBindingSource)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.eventTaskBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventItemBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // datesTable
+            // 
+            this.datesTable.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.datesTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(85)))));
+            this.datesTable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.datesTable.CausesValidation = false;
+            this.datesTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.datesTable.ColumnCount = 7;
+            this.datesTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.datesTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.datesTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.datesTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.datesTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.datesTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.datesTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.datesTable.Location = new System.Drawing.Point(46, 113);
+            this.datesTable.Name = "datesTable";
+            this.datesTable.RowCount = 5;
+            this.datesTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.datesTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.datesTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.datesTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.datesTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.datesTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.datesTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.datesTable.Size = new System.Drawing.Size(601, 502);
+            this.datesTable.TabIndex = 5;
+            this.datesTable.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // panel1
             // 
@@ -92,7 +125,7 @@ namespace DesktopSheduler
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(85)))));
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.editTaskBtn);
+            this.panel4.Controls.Add(this.saveChangeBtn);
             this.panel4.Controls.Add(this.deleteTaskBtn);
             this.panel4.Controls.Add(this.createTaskBtn);
             this.panel4.Controls.Add(this.label4);
@@ -101,21 +134,21 @@ namespace DesktopSheduler
             this.panel4.Size = new System.Drawing.Size(236, 215);
             this.panel4.TabIndex = 5;
             // 
-            // editTaskBtn
+            // saveChangeBtn
             // 
-            this.editTaskBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(78)))), ((int)(((byte)(115)))));
-            this.editTaskBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.editTaskBtn.FlatAppearance.BorderSize = 0;
-            this.editTaskBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editTaskBtn.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editTaskBtn.ForeColor = System.Drawing.Color.White;
-            this.editTaskBtn.Location = new System.Drawing.Point(18, 138);
-            this.editTaskBtn.Name = "editTaskBtn";
-            this.editTaskBtn.Size = new System.Drawing.Size(195, 30);
-            this.editTaskBtn.TabIndex = 6;
-            this.editTaskBtn.Text = "Edit ";
-            this.editTaskBtn.UseVisualStyleBackColor = false;
-            this.editTaskBtn.Click += new System.EventHandler(this.EditTask);
+            this.saveChangeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(78)))), ((int)(((byte)(115)))));
+            this.saveChangeBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.saveChangeBtn.FlatAppearance.BorderSize = 0;
+            this.saveChangeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveChangeBtn.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveChangeBtn.ForeColor = System.Drawing.Color.White;
+            this.saveChangeBtn.Location = new System.Drawing.Point(18, 138);
+            this.saveChangeBtn.Name = "saveChangeBtn";
+            this.saveChangeBtn.Size = new System.Drawing.Size(195, 30);
+            this.saveChangeBtn.TabIndex = 6;
+            this.saveChangeBtn.Text = "Save";
+            this.saveChangeBtn.UseVisualStyleBackColor = false;
+            this.saveChangeBtn.Click += new System.EventHandler(this.SaveChange);
             // 
             // deleteTaskBtn
             // 
@@ -209,9 +242,51 @@ namespace DesktopSheduler
             this.toDoListGrid.TabIndex = 4;
             this.toDoListGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // isDoneDataGridViewCheckBoxColumn
+            // 
+            this.isDoneDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.isDoneDataGridViewCheckBoxColumn.DataPropertyName = "isDone";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle1.NullValue = false;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.isDoneDataGridViewCheckBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.isDoneDataGridViewCheckBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.isDoneDataGridViewCheckBoxColumn.Frozen = true;
+            this.isDoneDataGridViewCheckBoxColumn.HeaderText = "Done";
+            this.isDoneDataGridViewCheckBoxColumn.MinimumWidth = 50;
+            this.isDoneDataGridViewCheckBoxColumn.Name = "isDoneDataGridViewCheckBoxColumn";
+            this.isDoneDataGridViewCheckBoxColumn.Width = 50;
+            // 
+            // taskDescriptionDataGridViewTextBoxColumn
+            // 
+            this.taskDescriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.taskDescriptionDataGridViewTextBoxColumn.DataPropertyName = "taskDescription";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.taskDescriptionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.taskDescriptionDataGridViewTextBoxColumn.Frozen = true;
+            this.taskDescriptionDataGridViewTextBoxColumn.HeaderText = "taskDescription";
+            this.taskDescriptionDataGridViewTextBoxColumn.Name = "taskDescriptionDataGridViewTextBoxColumn";
+            this.taskDescriptionDataGridViewTextBoxColumn.Width = 105;
+            // 
+            // alarmTimeDataGridViewTextBoxColumn
+            // 
+            this.alarmTimeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.alarmTimeDataGridViewTextBoxColumn.DataPropertyName = "alarmTime";
+            dataGridViewCellStyle3.Format = "HH:mm";
+            this.alarmTimeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.alarmTimeDataGridViewTextBoxColumn.HeaderText = "alarmTime";
+            this.alarmTimeDataGridViewTextBoxColumn.Name = "alarmTimeDataGridViewTextBoxColumn";
+            this.alarmTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.alarmTimeDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // eventTaskBindingSource
+            // 
+            this.eventTaskBindingSource.DataSource = typeof(DesktopSheduler.EventTask);
+            // 
             // label3
             // 
-            this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.White;
@@ -268,6 +343,9 @@ namespace DesktopSheduler
             // panel2
             // 
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel2.Controls.Add(this.crntMonthBtn);
+            this.panel2.Controls.Add(this.prevMonthBtn);
+            this.panel2.Controls.Add(this.nextMonthBtn);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label9);
@@ -282,6 +360,36 @@ namespace DesktopSheduler
             this.panel2.Size = new System.Drawing.Size(664, 638);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // crntMonthBtn
+            // 
+            this.crntMonthBtn.Location = new System.Drawing.Point(310, 53);
+            this.crntMonthBtn.Name = "crntMonthBtn";
+            this.crntMonthBtn.Size = new System.Drawing.Size(75, 23);
+            this.crntMonthBtn.TabIndex = 8;
+            this.crntMonthBtn.Text = "Current";
+            this.crntMonthBtn.UseVisualStyleBackColor = true;
+            this.crntMonthBtn.Click += new System.EventHandler(this.setCurrentMonth);
+            // 
+            // prevMonthBtn
+            // 
+            this.prevMonthBtn.Location = new System.Drawing.Point(46, 53);
+            this.prevMonthBtn.Name = "prevMonthBtn";
+            this.prevMonthBtn.Size = new System.Drawing.Size(75, 23);
+            this.prevMonthBtn.TabIndex = 7;
+            this.prevMonthBtn.Text = "Prev";
+            this.prevMonthBtn.UseVisualStyleBackColor = true;
+            this.prevMonthBtn.Click += new System.EventHandler(this.setPrevMonth);
+            // 
+            // nextMonthBtn
+            // 
+            this.nextMonthBtn.Location = new System.Drawing.Point(572, 53);
+            this.nextMonthBtn.Name = "nextMonthBtn";
+            this.nextMonthBtn.Size = new System.Drawing.Size(75, 23);
+            this.nextMonthBtn.TabIndex = 6;
+            this.nextMonthBtn.Text = "Next";
+            this.nextMonthBtn.UseVisualStyleBackColor = true;
+            this.nextMonthBtn.Click += new System.EventHandler(this.setNextMonth);
             // 
             // label11
             // 
@@ -360,76 +468,6 @@ namespace DesktopSheduler
             this.label5.TabIndex = 3;
             this.label5.Text = "Mon.";
             // 
-            // datesTable
-            // 
-            this.datesTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(85)))));
-            this.datesTable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.datesTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
-            this.datesTable.ColumnCount = 7;
-            this.datesTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.datesTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.datesTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.datesTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.datesTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.datesTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.datesTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.datesTable.Location = new System.Drawing.Point(46, 113);
-            this.datesTable.Name = "datesTable";
-            this.datesTable.RowCount = 5;
-            this.datesTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.datesTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.datesTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.datesTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.datesTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.datesTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.datesTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.datesTable.Size = new System.Drawing.Size(601, 502);
-            this.datesTable.TabIndex = 5;
-            this.datesTable.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
-            // 
-            // isDoneDataGridViewCheckBoxColumn
-            // 
-            this.isDoneDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.isDoneDataGridViewCheckBoxColumn.DataPropertyName = "isDone";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle1.NullValue = false;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.isDoneDataGridViewCheckBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.isDoneDataGridViewCheckBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.isDoneDataGridViewCheckBoxColumn.Frozen = true;
-            this.isDoneDataGridViewCheckBoxColumn.HeaderText = "Done";
-            this.isDoneDataGridViewCheckBoxColumn.MinimumWidth = 50;
-            this.isDoneDataGridViewCheckBoxColumn.Name = "isDoneDataGridViewCheckBoxColumn";
-            this.isDoneDataGridViewCheckBoxColumn.Width = 50;
-            // 
-            // taskDescriptionDataGridViewTextBoxColumn
-            // 
-            this.taskDescriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.taskDescriptionDataGridViewTextBoxColumn.DataPropertyName = "taskDescription";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.taskDescriptionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.taskDescriptionDataGridViewTextBoxColumn.Frozen = true;
-            this.taskDescriptionDataGridViewTextBoxColumn.HeaderText = "taskDescription";
-            this.taskDescriptionDataGridViewTextBoxColumn.Name = "taskDescriptionDataGridViewTextBoxColumn";
-            this.taskDescriptionDataGridViewTextBoxColumn.Width = 105;
-            // 
-            // alarmTimeDataGridViewTextBoxColumn
-            // 
-            this.alarmTimeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.alarmTimeDataGridViewTextBoxColumn.DataPropertyName = "alarmTime";
-            dataGridViewCellStyle3.Format = "HH:mm";
-            this.alarmTimeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.alarmTimeDataGridViewTextBoxColumn.HeaderText = "alarmTime";
-            this.alarmTimeDataGridViewTextBoxColumn.Name = "alarmTimeDataGridViewTextBoxColumn";
-            this.alarmTimeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.alarmTimeDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // eventTaskBindingSource
-            // 
-            this.eventTaskBindingSource.DataSource = typeof(DesktopSheduler.EventTask);
-            // 
             // eventItemBindingSource
             // 
             this.eventItemBindingSource.DataSource = typeof(DesktopSheduler.EventItem);
@@ -453,13 +491,12 @@ namespace DesktopSheduler
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.toDoPanel.ResumeLayout(false);
-            this.toDoPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toDoListGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventTaskBindingSource)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.eventTaskBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventItemBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -473,6 +510,20 @@ namespace DesktopSheduler
                 button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(176)))), ((int)(((byte)(210)))));
                 button.Text = date.ToString("dd.MM.yyyy") + "\r\n\r\n" + taskCount + " Tasks\r\n";
                 button.Enabled = true;
+
+              
+                button.Click += (s, e) =>
+                 {
+                     button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(96)))), ((int)(((byte)(55)))));
+                     if (this.currButton != null && this.currButton != s as Button)
+                     this.currButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(176)))), ((int)(((byte)(210)))));
+
+                     this.currButton = button;
+                     SetCurrentDate(datesButtonList[button].date);
+                     ShowToDoList(datesButtonList[button]);
+                 };
+               
+
             }
             else
             {
@@ -487,20 +538,6 @@ namespace DesktopSheduler
             Button button = new Button();
             CustomizeButton(button, date, taskCount, isActive);
 
-            if (isActive)
-            {
-                button.Click += (s, e) =>
-                {
-                    button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(96)))), ((int)(((byte)(55)))));
-                    if (this.currButton != null && this.currButton != s as Button)
-                        this.currButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(176)))), ((int)(((byte)(210)))));
-
-                    this.currButton = button;
-                    SetCurrentDate(datesButtonList[button].date);
-                    ShowToDoList(datesButtonList[button]);
-                };                 
-            }
-
             button.Anchor = ((System.Windows.Forms.AnchorStyles)((((
                        System.Windows.Forms.AnchorStyles.Top
                      | System.Windows.Forms.AnchorStyles.Bottom)
@@ -508,15 +545,12 @@ namespace DesktopSheduler
                      | System.Windows.Forms.AnchorStyles.Right)
                      )
              );
-
-            button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             button.FlatAppearance.BorderSize = 0;
             button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button.ForeColor = System.Drawing.Color.White;
-            button.Location = new System.Drawing.Point(0, 0);
+           // button.Location = new System.Drawing.Point(0, 0);
             button.Name = date.ToString() + "_btn";
             button.AutoSize = false;
-
             button.UseVisualStyleBackColor = false;
             return button;
         }
@@ -526,7 +560,8 @@ namespace DesktopSheduler
         }
 
         private Dictionary<Button, EventItem> SetCalendarDates(DateTime currentMonth) {
-           
+            datesTable.Controls.Clear();
+         
             Calendar     calendar   = CultureInfo.InvariantCulture.Calendar;
             JSONLoader   jSONLoader = new JSONLoader();
 
@@ -536,7 +571,6 @@ namespace DesktopSheduler
             DateTime date = new DateTime(currentMonth.Year,currentMonth.Month,1);        
             int dayOfWeek = ((int)date.DayOfWeek + 6) % 7;
   
-
             Button btn = null;
               for (int j = 0; j < 5;)
                 {
@@ -564,17 +598,21 @@ namespace DesktopSheduler
                     if (date.Month != currentMonth.Month)
                         break;                 
                 }
+           
             return eventButtonMap;
          }
+    
 
         private void RefreshTable () {
             datesTable.Controls.Clear();
             this.datesButtonList = SetCalendarDates(DateTime.Now);
         }
 
+
         private bool CheckTwoDates(DateTime dateTime1,DateTime dateTime2) {
             return (dateTime1.Month == dateTime2.Month && dateTime1.Day == dateTime2.Day && dateTime1.Year == dateTime2.Year);
         }
+
 
         private void AddTaskToDay(EventTask newTask) {
             EventItem evntItem = null; 
@@ -595,6 +633,14 @@ namespace DesktopSheduler
           
         }
 
+        private void SaveAllEventItem() {
+            JSONLoader jSONLoader = new JSONLoader();
+            foreach (EventItem item in datesButtonList.Values)
+            {
+                jSONLoader.Write(item);
+            }
+        }
+
         private void DeleteTaskOfDay(EventTask task) {
             EventItem evntItem = null;
 
@@ -604,7 +650,9 @@ namespace DesktopSheduler
 
                 if (CheckTwoDates(evntItem.date, task.alarmTime))
                 {
+                    toDoListGrid.DataSource = null;
                     evntItem.taskList.Remove(task);
+                    ShowToDoList(evntItem);
                     CustomizeButton(btn, evntItem.date, evntItem.taskList.Count, true);
                     break;
                 }
@@ -634,9 +682,8 @@ namespace DesktopSheduler
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button createTaskBtn;
-        private System.Windows.Forms.Button editTaskBtn;
+        private System.Windows.Forms.Button saveChangeBtn;
         private System.Windows.Forms.Button deleteTaskBtn;
-        private System.Windows.Forms.TableLayoutPanel datesTable;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label11;
@@ -650,6 +697,10 @@ namespace DesktopSheduler
         private DataGridViewCheckBoxColumn isDoneDataGridViewCheckBoxColumn;
         private DataGridViewTextBoxColumn taskDescriptionDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn alarmTimeDataGridViewTextBoxColumn;
+        private Button nextMonthBtn;
+        private Button prevMonthBtn;
+        private Button crntMonthBtn;
+        private TableLayoutPanel datesTable;
     }
 }
 

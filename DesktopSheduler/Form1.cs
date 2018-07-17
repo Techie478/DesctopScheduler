@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,16 +13,18 @@ namespace DesktopSheduler
 {
     public partial class Form1 : Form
     {
+        private DateTime currentMonth = DateTime.Today;
 
         public Form1()
         {
             InitializeComponent();
-            SetCurrentDate(DateTime.Today);
-            
-            this.datesButtonList = SetCalendarDates(DateTime.Today);
+            SetCurrentDate(currentMonth);
+            ChangeMonth(DateTime.Today);
         }
 
-        
+        private void ChangeMonth(DateTime time) {
+           this.datesButtonList = SetCalendarDates(time);
+        }
 
         private void CreateNewTask(object sender, EventArgs e)
         {
@@ -48,9 +51,9 @@ namespace DesktopSheduler
           
         }
 
-        private void EditTask(object sender, EventArgs e)
+        private void SaveChange(object sender, EventArgs e)
         {
-
+            SaveAllEventItem();
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -86,6 +89,22 @@ namespace DesktopSheduler
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void setPrevMonth(object sender, EventArgs e)
+        {
+            currentMonth = new DateTime(currentMonth.Year, currentMonth.Month - 1, 1);
+            ChangeMonth(currentMonth);
+        }
+        private void setNextMonth(object sender, EventArgs e)
+        {
+            currentMonth = new DateTime(currentMonth.Year, currentMonth.Month + 1, 1);
+            ChangeMonth(currentMonth);
+        }
+        private void setCurrentMonth(object sender, EventArgs e)
+        {
+            currentMonth = DateTime.Today;
+            ChangeMonth(currentMonth);
         }
     }
 }
